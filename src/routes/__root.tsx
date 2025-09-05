@@ -8,6 +8,7 @@ import type { QueryClient } from "@tanstack/react-query";
 import { ReactNode } from "react";
 import { PageLayout } from "@/components/layouts/page-layout.tsx";
 import { Navbar } from "@/components/shared/navbar";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 interface IRootRouteContext {
 	queryClient: QueryClient;
@@ -67,6 +68,7 @@ function RootDocument({ children }: { children: ReactNode }) {
 					<Navbar />
 					{children}
 				</PageLayout>
+				<ReactQueryDevtools />
 				<Scripts />
 			</body>
 		</html>
