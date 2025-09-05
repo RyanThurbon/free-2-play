@@ -22,7 +22,7 @@ export function GameListDisplayCard({ gameListing }: GameListDisplayCard) {
 					{gameListing.title}
 				</h2>
 				<div className="flex items-center justify-between">
-					<span className="text-muted-foreground text-sm">
+					<span className="text-muted-foreground text-sm hidden md:flex">
 						{dayjs(gameListing.release_date).format("YYYY-MM-DD")}
 					</span>
 					<Badge>{gameListing.genre}</Badge>

@@ -1,4 +1,4 @@
-import { Icons } from "../shared/icons";
+import { Icons } from "../icons.tsx";
 
 export function PendingFallback() {
 	return (
