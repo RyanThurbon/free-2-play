@@ -6,6 +6,8 @@ import {
 import appCss from "../styles.css?url";
 import type { QueryClient } from "@tanstack/react-query";
 import { ReactNode } from "react";
+import { PageLayout } from "@/components/layouts/page-layout.tsx";
+import { Navbar } from "@/components/shared/navbar";
 
 interface IRootRouteContext {
 	queryClient: QueryClient;
@@ -61,7 +63,10 @@ function RootDocument({ children }: { children: ReactNode }) {
 				<HeadContent />
 			</head>
 			<body>
-				{children}
+				<PageLayout>
+					<Navbar />
+					{children}
+				</PageLayout>
 				<Scripts />
 			</body>
 		</html>
