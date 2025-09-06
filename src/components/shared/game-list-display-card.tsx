@@ -1,20 +1,21 @@
 import { Card, CardContent } from "@/components/ui/card.tsx";
 import dayjs from "dayjs";
 import { Badge } from "@/components/ui/badge.tsx";
-import { GamesList } from "@/server/types.ts";
+import { GameListing } from "@/server/types.ts";
 
 type GameListDisplayCard = {
-	gameListing: GamesList;
+	gameListing: GameListing;
 };
 
 export function GameListDisplayCard({ gameListing }: GameListDisplayCard) {
+	// const { styles, handleImageOnLoad } = useImageOnLoad();
+
 	return (
 		<Card key={gameListing.id}>
 			<img
 				src={gameListing.thumbnail}
 				alt={gameListing.title}
-				className="rounded-md rounded-b-none"
-				loading="lazy"
+				className="rounded-md rounded-b-none aspect-[16/9]"
 				decoding="async"
 			/>
 			<CardContent className="flex flex-col gap-y-3 pb-2">

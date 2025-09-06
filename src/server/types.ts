@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-const gamesListSchema = z.object({
+const gameListingSchema = z.object({
 	id: z.number(),
 	title: z.string(),
 	thumbnail: z.url(),
@@ -14,4 +14,4 @@ const gamesListSchema = z.object({
 	freetogame_profile_url: z.url(),
 });
 
-export type GamesList = z.infer<typeof gamesListSchema>;
+export type GameListing = z.infer<typeof gameListingSchema>;
