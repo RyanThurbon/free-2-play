@@ -52,7 +52,6 @@ export const Route = createRootRouteWithContext<IRootRouteContext>()({
 			},
 		],
 	}),
-
 	shellComponent: RootDocument,
 });
 

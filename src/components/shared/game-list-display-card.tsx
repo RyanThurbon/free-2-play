@@ -3,11 +3,11 @@ import dayjs from "dayjs";
 import { Badge } from "@/components/ui/badge.tsx";
 import { GameListing } from "@/server/types.ts";
 
-type GameListDisplayCard = {
+type GameListDisplayCardProps = {
 	gameListing: GameListing;
 };
 
-export function GameListDisplayCard({ gameListing }: GameListDisplayCard) {
+export function GameListDisplayCard({ gameListing }: GameListDisplayCardProps) {
 	// const { styles, handleImageOnLoad } = useImageOnLoad();
 
 	return (

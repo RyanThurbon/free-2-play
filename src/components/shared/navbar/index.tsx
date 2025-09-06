@@ -5,8 +5,10 @@ import {
 	DropdownMenu,
 	DropdownMenuContent,
 	DropdownMenuItem,
+	DropdownMenuSeparator,
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu.tsx";
+import { GAME_GENRES } from "@/lib/constants.ts";
 
 export function Navbar() {
 	return (
@@ -26,12 +28,14 @@ export function Navbar() {
 							<ChevronDownIcon className="size-4" />
 						</Button>
 					</DropdownMenuTrigger>
-					<DropdownMenuContent className="w-[200px]">
-						{["Action", "Adventure"].map((item, index) => (
+					<DropdownMenuContent className="w-[150px]">
+						{GAME_GENRES.map((item, index) => (
 							<DropdownMenuItem key={index}>
 								{item}
 							</DropdownMenuItem>
 						))}
+						<DropdownMenuSeparator />
+						<DropdownMenuItem>All Games</DropdownMenuItem>
 					</DropdownMenuContent>
 				</DropdownMenu>
 			</header>

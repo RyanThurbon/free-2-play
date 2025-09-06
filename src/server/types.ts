@@ -14,4 +14,15 @@ const gameListingSchema = z.object({
 	freetogame_profile_url: z.url(),
 });
 
+export const gamesListFiltersSchema = z
+	.object({
+		platform: z.enum(["pc", "browser", "all"]).optional(),
+		category: z.string().optional(),
+		"sort-by": z
+			.enum(["release-date", "popularity", "alphabetical", "relevance"])
+			.optional(),
+	})
+	.optional();
+
 export type GameListing = z.infer<typeof gameListingSchema>;
+export type GameListFilters = z.infer<typeof gamesListFiltersSchema>;

@@ -9,7 +9,7 @@ export function GamesList() {
 		<section className="games-list">
 			<div className="py-10 flex flex-col gap-y-6">
 				<SectionHeading
-					heading={`The best free games for PC and browser of ${dayjs().year()}!`}
+					heading={`The best free games for PC and browser in ${dayjs().year()}!`}
 				/>
 				<Suspense fallback={<PendingFallback />}>
 					<GamesListSection />
