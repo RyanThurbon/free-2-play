@@ -8,8 +8,8 @@ import type { QueryClient } from "@tanstack/react-query";
 import { ReactNode } from "react";
 import { PageLayout } from "@/components/layouts/page-layout.tsx";
 import { Navbar } from "@/components/shared/navbar";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { Footer } from "@/components/shared/footer.tsx";
+import { Analytics } from "@vercel/analytics/react";
 
 interface IRootRouteContext {
 	queryClient: QueryClient;
@@ -24,9 +24,6 @@ export const Route = createRootRouteWithContext<IRootRouteContext>()({
 			{
 				name: "viewport",
 				content: "width=device-width, initial-scale=1",
-			},
-			{
-				title: "TanStack Start Starter",
 			},
 		],
 		links: [
@@ -73,7 +70,7 @@ function RootDocument({ children }: { children: ReactNode }) {
 						<Footer />
 					</main>
 				</PageLayout>
-				<ReactQueryDevtools />
+				<Analytics />
 				<Scripts />
 			</body>
 		</html>
