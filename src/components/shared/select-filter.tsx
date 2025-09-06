@@ -25,7 +25,9 @@ export function SelectFilter(props: SelectFilterProps) {
 
 	return (
 		<div className="flex items-center">
-			<span className="text-muted-foreground text-sm">{props.label}</span>
+			<span className="text-muted-foreground text-sm hidden md:block">
+				{props.label}
+			</span>
 			<Select
 				defaultValue={props.defaultValue}
 				onValueChange={async (value) => {

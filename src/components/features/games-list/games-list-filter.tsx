@@ -43,7 +43,7 @@ export function GamesListFilter() {
 
 	return (
 		<section id="filters">
-			<div className="flex flex-col md:flex-row md:justify-between md:items-center gap-2 md:gap-4 w-full">
+			<div className="flex items-center gap-x-4 w-full">
 				<SelectFilter
 					type="platform"
 					label="Platform:"

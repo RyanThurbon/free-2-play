@@ -13,8 +13,8 @@ export function GamesListSection() {
 
 	return gamesList.length > 0 ? (
 		<div className="flex flex-col gap-y-4">
-			<div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-				<span className="text-sm text-muted-foreground">
+			<div className="flex items-center justify-between">
+				<span className="text-sm text-muted-foreground truncate">
 					Showing {gamesList.length} games
 				</span>
 				<GamesListFilter />
