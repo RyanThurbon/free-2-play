@@ -1,6 +1,6 @@
 import { ChevronDownIcon, Gamepad2Icon } from "lucide-react";
 import { Button } from "@/components/ui/button.tsx";
-import { Link, useNavigate } from "@tanstack/react-router";
+import { Link, useNavigate, useSearch } from "@tanstack/react-router";
 import {
 	DropdownMenu,
 	DropdownMenuContent,
@@ -12,6 +12,7 @@ import { GAME_GENRES } from "@/lib/constants.ts";
 
 export function Navbar() {
 	const navigate = useNavigate();
+	const currentSearch = useSearch({ from: "/" });
 
 	return (
 		<section id="navbar">
@@ -40,6 +41,7 @@ export function Navbar() {
 									await navigate({
 										to: "/",
 										search: {
+											...currentSearch,
 											category: item.toLowerCase(),
 										},
 									});

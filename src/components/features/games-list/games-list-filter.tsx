@@ -2,6 +2,7 @@ import {
 	SelectFilter,
 	SelectFilterProps,
 } from "@/components/shared/select-filter.tsx";
+import { useSearch } from "@tanstack/react-router";
 
 const platformFilters = [
 	{
@@ -32,12 +33,14 @@ const sortByFilters = [
 		value: "release-date",
 	},
 	{
-		label: "Populairty",
+		label: "Popularity",
 		value: "popularity",
 	},
 ] satisfies SelectFilterProps["filters"];
 
 export function GamesListFilter() {
+	const currentSearch = useSearch({ from: "/" });
+
 	return (
 		<section id="filters">
 			<div className="flex flex-col md:flex-row md:justify-between md:items-center gap-2 md:gap-4 w-full">
@@ -45,6 +48,7 @@ export function GamesListFilter() {
 					type="platform"
 					label="Platform:"
 					defaultValue="all"
+					value={currentSearch?.platform ?? "all"}
 					placeholder="All Platforms"
 					filters={platformFilters}
 				/>
@@ -52,6 +56,7 @@ export function GamesListFilter() {
 					type="sort-by"
 					label="Sort by:"
 					defaultValue="relevance"
+					value={currentSearch?.["sort-by"] ?? "relevance"}
 					placeholder="Relevance"
 					filters={sortByFilters}
 				/>

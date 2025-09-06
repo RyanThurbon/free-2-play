@@ -9,6 +9,7 @@ import { ReactNode } from "react";
 import { PageLayout } from "@/components/layouts/page-layout.tsx";
 import { Navbar } from "@/components/shared/navbar";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { Footer } from "@/components/shared/footer.tsx";
 
 interface IRootRouteContext {
 	queryClient: QueryClient;
@@ -64,8 +65,13 @@ function RootDocument({ children }: { children: ReactNode }) {
 			</head>
 			<body>
 				<PageLayout>
-					<Navbar />
-					{children}
+					<main className="flex flex-col min-h-screen">
+						<div className="flex flex-col gap-y-10 flex-1">
+							<Navbar />
+							{children}
+						</div>
+						<Footer />
+					</main>
 				</PageLayout>
 				<ReactQueryDevtools />
 				<Scripts />

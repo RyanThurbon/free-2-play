@@ -10,6 +10,7 @@ import { useNavigate, useSearch } from "@tanstack/react-router";
 export type SelectFilterProps = {
 	label: string;
 	defaultValue: string;
+	value: string;
 	placeholder: string;
 	filters: {
 		value: string;
@@ -23,7 +24,7 @@ export function SelectFilter(props: SelectFilterProps) {
 	const currentSearch = useSearch({ from: "/" });
 
 	return (
-		<div className="flex items-center gap-x-2">
+		<div className="flex items-center">
 			<span className="text-muted-foreground text-sm">{props.label}</span>
 			<Select
 				defaultValue={props.defaultValue}
@@ -37,7 +38,7 @@ export function SelectFilter(props: SelectFilterProps) {
 					});
 				}}
 			>
-				<SelectTrigger className="w-fit">
+				<SelectTrigger className="w-fit" value={props.value}>
 					<SelectValue placeholder={props.placeholder} />
 				</SelectTrigger>
 				<SelectContent>
