@@ -16,11 +16,9 @@ const gameListingSchema = z.object({
 
 export const gamesListFiltersSchema = z
 	.object({
-		platform: z.enum(["pc", "browser", "all"]).optional(),
+		platform: z.string().optional(),
 		category: z.string().optional(),
-		"sort-by": z
-			.enum(["release-date", "popularity", "alphabetical", "relevance"])
-			.optional(),
+		"sort-by": z.string().optional(),
 	})
 	.optional();
 

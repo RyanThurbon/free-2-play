@@ -11,15 +11,15 @@ export const $getGamesListFn = createServerFn({ method: "GET" })
 		const searchParams = new URLSearchParams();
 
 		if (data?.category) {
-			searchParams.set("category", data.category.toLowerCase());
+			searchParams.append("category", data.category.toLowerCase());
 		}
 
 		if (data?.platform) {
-			searchParams.set("platform", data.platform.toLowerCase());
+			searchParams.append("platform", data.platform.toLowerCase());
 		}
 
 		if (data?.["sort-by"]) {
-			searchParams.set("sort-by", data["sort-by"].toLowerCase());
+			searchParams.append("sort-by", data["sort-by"].toLowerCase());
 		}
 
 		const { data: gamesList, error } = await betterFetch<GameListing[]>(

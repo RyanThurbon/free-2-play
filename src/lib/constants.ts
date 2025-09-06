@@ -4,15 +4,16 @@ export const ONE_HOUR = 60 * ONE_MINUTE;
 export const ONE_DAY = 24 * ONE_HOUR;
 
 export const GAME_GENRES = [
+	"MMO",
 	"MMORPG",
 	"Shooter",
 	"MOBA",
 	"Anime",
-	"Battle Royale",
+	"Battle-Royale",
 	"Strategy",
 	"Fantasy",
 	"Sci-Fi",
-	"Card Games",
+	"Card",
 	"Racing",
 	"Fighting",
 	"Social",

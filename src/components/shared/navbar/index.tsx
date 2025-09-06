@@ -1,6 +1,6 @@
 import { ChevronDownIcon, Gamepad2Icon } from "lucide-react";
 import { Button } from "@/components/ui/button.tsx";
-import { Link } from "@tanstack/react-router";
+import { Link, useNavigate } from "@tanstack/react-router";
 import {
 	DropdownMenu,
 	DropdownMenuContent,
@@ -11,6 +11,8 @@ import {
 import { GAME_GENRES } from "@/lib/constants.ts";
 
 export function Navbar() {
+	const navigate = useNavigate();
+
 	return (
 		<section id="navbar">
 			<header className="flex items-center justify-between py-4 border-b border-primary">
@@ -30,12 +32,33 @@ export function Navbar() {
 					</DropdownMenuTrigger>
 					<DropdownMenuContent className="w-[150px]">
 						{GAME_GENRES.map((item, index) => (
-							<DropdownMenuItem key={index}>
+							<DropdownMenuItem
+								key={index}
+								className="capitalize"
+								onClick={async (e) => {
+									e.preventDefault();
+									await navigate({
+										to: "/",
+										search: {
+											category: item.toLowerCase(),
+										},
+									});
+								}}
+							>
 								{item}
 							</DropdownMenuItem>
 						))}
 						<DropdownMenuSeparator />
-						<DropdownMenuItem>All Games</DropdownMenuItem>
+						<DropdownMenuItem
+							onClick={async (e) => {
+								e.preventDefault();
+								await navigate({
+									to: "/",
+								});
+							}}
+						>
+							All Games
+						</DropdownMenuItem>
 					</DropdownMenuContent>
 				</DropdownMenu>
 			</header>
