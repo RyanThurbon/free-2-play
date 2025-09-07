@@ -27,7 +27,7 @@ export function GameListDisplayCard({ gameListing }: GameListDisplayCardProps) {
 						{gameListing.title}
 					</h2>
 					<div className="flex items-center justify-between">
-						<span className="text-muted-foreground text-sm hidden md:flex">
+						<span className="text-muted-foreground text-sm">
 							{dayjs(gameListing.release_date).format(
 								"YYYY-MM-DD",
 							)}

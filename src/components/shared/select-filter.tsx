@@ -24,7 +24,7 @@ export function SelectFilter(props: SelectFilterProps) {
 	const currentSearch = useSearch({ from: "/" });
 
 	return (
-		<div className="flex items-center">
+		<div className="flex items-center gap-x-2">
 			<span className="text-muted-foreground text-sm hidden md:block">
 				{props.label}
 			</span>
@@ -40,7 +40,7 @@ export function SelectFilter(props: SelectFilterProps) {
 					});
 				}}
 			>
-				<SelectTrigger className="w-fit" value={props.value}>
+				<SelectTrigger className="w-fit px-0" value={props.value}>
 					<SelectValue placeholder={props.placeholder} />
 				</SelectTrigger>
 				<SelectContent>

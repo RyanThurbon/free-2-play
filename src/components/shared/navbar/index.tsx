@@ -27,7 +27,7 @@ export function Navbar() {
 							variant="ghost"
 							className="flex items-center gap-x-2"
 						>
-							Browse Games List
+							Browse Genres
 							<ChevronDownIcon className="size-4" />
 						</Button>
 					</DropdownMenuTrigger>
