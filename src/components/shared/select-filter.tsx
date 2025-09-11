@@ -9,7 +9,6 @@ import { useNavigate, useSearch } from "@tanstack/react-router";
 
 export type SelectFilterProps = {
 	label: string;
-	defaultValue: string;
 	value: string;
 	placeholder: string;
 	filters: {
@@ -29,7 +28,7 @@ export function SelectFilter(props: SelectFilterProps) {
 				{props.label}
 			</span>
 			<Select
-				defaultValue={props.defaultValue}
+				value={props.value}
 				onValueChange={async (value) => {
 					await navigate({
 						to: "/",

@@ -1,6 +1,6 @@
 import {
 	SelectFilter,
-	SelectFilterProps,
+	type SelectFilterProps,
 } from "@/components/shared/select-filter.tsx";
 import { useSearch } from "@tanstack/react-router";
 
@@ -47,16 +47,14 @@ export function GamesListFilter() {
 				<SelectFilter
 					type="platform"
 					label="Platform:"
-					defaultValue="all"
-					value={currentSearch?.platform ?? "all"}
+					value={currentSearch?.platform ?? ""}
 					placeholder="All Platforms"
 					filters={platformFilters}
 				/>
 				<SelectFilter
 					type="sort-by"
 					label="Sort by:"
-					defaultValue="relevance"
-					value={currentSearch?.["sort-by"] ?? "relevance"}
+					value={currentSearch?.["sort-by"] ?? ""}
 					placeholder="Relevance"
 					filters={sortByFilters}
 				/>
