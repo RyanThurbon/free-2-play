@@ -48,7 +48,7 @@ export const Route = createRootRouteWithContext<IRootRouteContext>()({
 				rel: "stylesheet",
 				href: "https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap",
 			},
-			{ rel: "dns-prefetch", href: "https://www.freetogame.com/api" },
+			{ rel: "dns-prefetch", href: "https://www.freetogame.com" },
 		],
 	}),
 	shellComponent: RootDocument,
