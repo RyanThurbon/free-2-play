@@ -1,15 +1,15 @@
+import { PageLayout } from "@/components/layouts/page-layout.tsx";
+import { Footer } from "@/components/shared/footer.tsx";
+import { Navbar } from "@/components/shared/navbar";
+import type { QueryClient } from "@tanstack/react-query";
 import {
-	createRootRouteWithContext,
 	HeadContent,
 	Scripts,
+	createRootRouteWithContext,
 } from "@tanstack/react-router";
-import appCss from "../styles.css?url";
-import type { QueryClient } from "@tanstack/react-query";
-import { ReactNode } from "react";
-import { PageLayout } from "@/components/layouts/page-layout.tsx";
-import { Navbar } from "@/components/shared/navbar";
-import { Footer } from "@/components/shared/footer.tsx";
 import { Analytics } from "@vercel/analytics/react";
+import type { ReactNode } from "react";
+import appCss from "../styles.css?url";
 
 interface IRootRouteContext {
 	queryClient: QueryClient;
@@ -48,6 +48,7 @@ export const Route = createRootRouteWithContext<IRootRouteContext>()({
 				rel: "stylesheet",
 				href: "https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap",
 			},
+			{ rel: "dns-prefetch", href: "https://www.freetogame.com/api" },
 		],
 	}),
 	shellComponent: RootDocument,
@@ -57,7 +58,7 @@ function RootDocument({ children }: { children: ReactNode }) {
 	return (
 		<html lang="en">
 			<head>
-				<title>FREE2PLAY</title>
+				<title>Free2Play</title>
 				<HeadContent />
 			</head>
 			<body>
