@@ -12,20 +12,22 @@ export function GamesListSection() {
 		return <ErrorFallback refetch={refetch()} />;
 	}
 
-	return gamesList.length > 0 ? (
+	return (
 		<div className="flex flex-col gap-y-4">
 			<div className="flex items-center justify-between">
 				<GamesListFilter />
 				<ClearFiltersButton />
 			</div>
 
-			<GameListGrid>
-				{gamesList.map((game) => (
-					<GameListDisplayCard gameListing={game} key={game.id} />
-				))}
-			</GameListGrid>
+			{gamesList.length > 0 ? (
+				<GameListGrid>
+					{gamesList.map((game) => (
+						<GameListDisplayCard gameListing={game} key={game.id} />
+					))}
+				</GameListGrid>
+			) : (
+				<p>No results found</p>
+			)}
 		</div>
-	) : (
-		<p>No results found</p>
 	);
 }
